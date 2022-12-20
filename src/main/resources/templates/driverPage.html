@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Driver Information Pages</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <ul>
+            <li th:each="drv : ${dList} ">
+                <a th:href="@{drivers/{item}(item=${drv.Name})}" th:text="${drv.Name} + ' ( ' + ${drv.Age} + ')'">Driver</a>
+            </li>
+        </ul>
+        
+        <form method="post" action="/drivers">
+            <input type="text" id="Name" name="driverName" placeholder="Enter Drivers Name.." required>
+            <button type="submit">Add new drivers</button>
+        </form>
+        <form method="get" action="/">
+            
+            <button>Back</button>
+        </form>
+    </body>
+</html>

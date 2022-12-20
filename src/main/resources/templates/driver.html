@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Driver's List</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2 th:text="${driver.Name}">Name</h2>
+        <h3 th:text="${driver.Age}">Age</h3>
+        <span th:text="'Experience: ' + ${driver.experience}">Experience</span><br>
+        <span th:text="'Accident: ' + ${driver.accidents}">Accidents</span><br>
+        
+        <form method="get" action="/drivers">
+            <button>Back</button>
+        </form>
+        <!--
+        <h2 th:if="${hero.health > 0}">Available Quests</h2>
+        <ul th:if="${hero.health > 0}">
+            <li th:each="quest : ${quests}">
+                <span th:text="${quest.name} + ' (difficulty ' + ${quest.difficulty} + ')'">quest</span>
+                <form method="post" action="/tryquest">
+                    <input type="hidden" id="driver" name="driverName" th:value="${driver.name}">
+                    <input type="hidden" id="cars" name="plate_no" th:value="${car.plate_no}">
+                    <button type="submit">Try Quest</button>
+                </form>
+            </li>
+        </ul>
+        -->
+    </body>
+</html>

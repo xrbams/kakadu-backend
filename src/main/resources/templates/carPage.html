@@ -1,0 +1,35 @@
+po<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Car Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+         <h1>Available Cars</h1>
+            <ul>
+                <li th:each="caz : ${carL}">
+                    <span th:text="'Plate Number: ' + ${caz.plate_no} + ' (Model ' + ${caz.model} + ')'"> Cars Model</span>
+                    <form method="post" action="/deleteCars">
+                        <input type="hidden" name="plate_no" th:value="${caz.plate_no}">
+                        <button>Delete</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <form  method="post" action="/cars">
+            <p>
+                <input type="text" name="plate_no" placeholder="New plate number..." required>
+                <input type="text" name="model" placeholder="New Model..." required>
+                <button type="submit">Add New Car</button>
+            </p>    
+        </form>
+        <form method="get" action="/">
+            <button type="submit">Back</button>
+        </form>
+    </body>
+</html>
